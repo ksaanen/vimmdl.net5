@@ -116,7 +116,7 @@ namespace vimmdl
                     // AsyncContext helps an issue I was noticing previously, because some of the progress
                     // reports were coming far after ones that should have been the other way around (i.e.
                     // it would print 44% before 23%).
-                    AsyncContext.Run(() => wc.DownloadFileTaskAsync(new Uri($"http://download.vimm.net/download.php?id={id}"), $"{id}.tmp"));
+                    AsyncContext.Run(() => wc.DownloadFileTaskAsync(new Uri($"http://download3.vimm.net/download/?mediaId={id}"), $"{id}.tmp"));
 
                     // Unfortunately this is the only way I can find out the intended name of the file.
                     var newname = wc.ResponseHeaders["Content-Disposition"].Split('"')[1];
